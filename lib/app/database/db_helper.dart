@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:list_app/app/auth/model/auth_model.dart';
+import 'package:list_app/app/userList/model/user_model.dart';
 import 'package:logger/logger.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
@@ -14,14 +15,14 @@ class DbHelper {
 
   static const authTable = "authTable";
   static const userId = "userId";
-  static const authuserName = "userName";
+  static const authuserName = "authuserName";
   static const userPhoneNumber = 'userPhoneNumber';
   static const userPassword = 'userPassword';
 
   static const userTable = "userTable";
   static const id = "id";
   static const name = "name";
-  static const userName = "userName";
+  static const userName = "username";
   static const email = "email";
   static const address = "address";
   static const phone = "phone";
@@ -62,8 +63,7 @@ class DbHelper {
      $address TEXT NOT NULL,
      $phone TEXT NOT NULL,
      $website TEXT NOT NULL,
-     $company TEXT NOT NULL,
-               
+     $company TEXT NOT NULL         
    )
 ''');
 
@@ -96,5 +96,58 @@ class DbHelper {
     }
 
     return null;
+  }
+
+  Future<void> insertUser(User user) async {
+    final database = await instance.database;
+    try {
+      await database!.insert(
+        userTable,
+        user.toJson(),
+        conflictAlgorithm: ConflictAlgorithm.replace,
+      );
+      logger.i('User inserted successfully: ${user.toJson()}');
+    } catch (e) {
+      logger.e('Error inserting user: $e');
+    }
+  }
+
+  /// Retrieves all Users from the userTable
+  Future<List<User>> getUsers() async {
+    final database = await instance.database;
+    try {
+      final result = await database!.query(userTable);
+
+      // Log the database result for debugging
+      print('Database query result: $result');
+
+      // Safely map the results and handle null values
+      return result.map((json) {
+        try {
+          return User.fromJson(json);
+        } catch (e) {
+          print('Error deserializing user: $json, error: $e');
+          throw Exception('Invalid data in database');
+        }
+      }).toList();
+    } catch (e) {
+      print('Error querying database: $e');
+      return [];
+    }
+  }
+
+  Future<void> deleteUserById(int userId) async {
+    final database = await instance.database;
+    try {
+      await database!.delete(
+        userTable,
+        where: '$id = ?',
+        whereArgs: [userId],
+      );
+      logger.i('User with ID $userId deleted successfully');
+    } catch (e) {
+      logger.e('Error deleting user with ID $userId: $e');
+      throw Exception('Error deleting user');
+    }
   }
 }

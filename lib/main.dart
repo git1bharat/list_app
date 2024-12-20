@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import 'package:list_app/app/auth/bloc/bloc/auth_bloc.dart';
+import 'package:list_app/app/database/db_helper.dart';
 import 'package:list_app/app/repository/list_app_repository.dart';
 import 'package:list_app/app/userList/bloc/user_bloc.dart';
 import 'package:list_app/app/userList/repository/user_repository.dart';
@@ -17,22 +17,27 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Initialize DbHelper here
+    final DbHelper dbHelper = DbHelper.init();
+
     return MultiBlocProvider(
       providers: [
         BlocProvider(
           create: (context) => AuthBloc(ListAppRepository()),
         ),
         BlocProvider(
-          create: (context) => UserBloc(UserRepository()),
-        ),
+            create: (context) => UserBloc(
+                  UserRepository(),
+                )),
       ],
       child: MaterialApp(
-          title: 'Flutter Demo',
-          theme: ThemeData(
-            colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-            useMaterial3: true,
-          ),
-          home: const HomeScreen()),
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+          useMaterial3: true,
+        ),
+        home: const LoginScreen(),
+      ),
     );
   }
 }

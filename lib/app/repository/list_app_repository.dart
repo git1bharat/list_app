@@ -26,7 +26,7 @@ class ListAppRepository {
       // If not, proceed with registration
       await _dbHelper.insertSignUpCredential(
         AuthenticationModel(
-          userName: name,
+          authuserName: name,
           userPhoneNumber: userPhoneNumber,
           userPassword: userPassword,
         ),

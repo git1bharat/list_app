@@ -21,7 +21,7 @@ AuthenticationModel _$AuthenticationModelFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$AuthenticationModel {
   int? get userId => throw _privateConstructorUsedError;
-  String get userName => throw _privateConstructorUsedError;
+  String get authuserName => throw _privateConstructorUsedError;
   String get userPhoneNumber => throw _privateConstructorUsedError;
   String get userPassword => throw _privateConstructorUsedError;
 
@@ -39,7 +39,7 @@ abstract class $AuthenticationModelCopyWith<$Res> {
   @useResult
   $Res call(
       {int? userId,
-      String userName,
+      String authuserName,
       String userPhoneNumber,
       String userPassword});
 }
@@ -58,7 +58,7 @@ class _$AuthenticationModelCopyWithImpl<$Res, $Val extends AuthenticationModel>
   @override
   $Res call({
     Object? userId = freezed,
-    Object? userName = null,
+    Object? authuserName = null,
     Object? userPhoneNumber = null,
     Object? userPassword = null,
   }) {
@@ -67,9 +67,9 @@ class _$AuthenticationModelCopyWithImpl<$Res, $Val extends AuthenticationModel>
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
               as int?,
-      userName: null == userName
-          ? _value.userName
-          : userName // ignore: cast_nullable_to_non_nullable
+      authuserName: null == authuserName
+          ? _value.authuserName
+          : authuserName // ignore: cast_nullable_to_non_nullable
               as String,
       userPhoneNumber: null == userPhoneNumber
           ? _value.userPhoneNumber
@@ -93,7 +93,7 @@ abstract class _$$AuthenticationModelImplCopyWith<$Res>
   @useResult
   $Res call(
       {int? userId,
-      String userName,
+      String authuserName,
       String userPhoneNumber,
       String userPassword});
 }
@@ -110,7 +110,7 @@ class __$$AuthenticationModelImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? userId = freezed,
-    Object? userName = null,
+    Object? authuserName = null,
     Object? userPhoneNumber = null,
     Object? userPassword = null,
   }) {
@@ -119,9 +119,9 @@ class __$$AuthenticationModelImplCopyWithImpl<$Res>
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
               as int?,
-      userName: null == userName
-          ? _value.userName
-          : userName // ignore: cast_nullable_to_non_nullable
+      authuserName: null == authuserName
+          ? _value.authuserName
+          : authuserName // ignore: cast_nullable_to_non_nullable
               as String,
       userPhoneNumber: null == userPhoneNumber
           ? _value.userPhoneNumber
@@ -142,7 +142,7 @@ class _$AuthenticationModelImpl
     implements _AuthenticationModel {
   _$AuthenticationModelImpl(
       {this.userId,
-      required this.userName,
+      required this.authuserName,
       required this.userPhoneNumber,
       required this.userPassword});
 
@@ -152,7 +152,7 @@ class _$AuthenticationModelImpl
   @override
   final int? userId;
   @override
-  final String userName;
+  final String authuserName;
   @override
   final String userPhoneNumber;
   @override
@@ -160,7 +160,7 @@ class _$AuthenticationModelImpl
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'AuthenticationModel(userId: $userId, userName: $userName, userPhoneNumber: $userPhoneNumber, userPassword: $userPassword)';
+    return 'AuthenticationModel(userId: $userId, authuserName: $authuserName, userPhoneNumber: $userPhoneNumber, userPassword: $userPassword)';
   }
 
   @override
@@ -169,7 +169,7 @@ class _$AuthenticationModelImpl
     properties
       ..add(DiagnosticsProperty('type', 'AuthenticationModel'))
       ..add(DiagnosticsProperty('userId', userId))
-      ..add(DiagnosticsProperty('userName', userName))
+      ..add(DiagnosticsProperty('authuserName', authuserName))
       ..add(DiagnosticsProperty('userPhoneNumber', userPhoneNumber))
       ..add(DiagnosticsProperty('userPassword', userPassword));
   }
@@ -180,8 +180,8 @@ class _$AuthenticationModelImpl
         (other.runtimeType == runtimeType &&
             other is _$AuthenticationModelImpl &&
             (identical(other.userId, userId) || other.userId == userId) &&
-            (identical(other.userName, userName) ||
-                other.userName == userName) &&
+            (identical(other.authuserName, authuserName) ||
+                other.authuserName == authuserName) &&
             (identical(other.userPhoneNumber, userPhoneNumber) ||
                 other.userPhoneNumber == userPhoneNumber) &&
             (identical(other.userPassword, userPassword) ||
@@ -190,8 +190,8 @@ class _$AuthenticationModelImpl
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, userId, userName, userPhoneNumber, userPassword);
+  int get hashCode => Object.hash(
+      runtimeType, userId, authuserName, userPhoneNumber, userPassword);
 
   @JsonKey(ignore: true)
   @override
@@ -211,7 +211,7 @@ class _$AuthenticationModelImpl
 abstract class _AuthenticationModel implements AuthenticationModel {
   factory _AuthenticationModel(
       {final int? userId,
-      required final String userName,
+      required final String authuserName,
       required final String userPhoneNumber,
       required final String userPassword}) = _$AuthenticationModelImpl;
 
@@ -221,7 +221,7 @@ abstract class _AuthenticationModel implements AuthenticationModel {
   @override
   int? get userId;
   @override
-  String get userName;
+  String get authuserName;
   @override
   String get userPhoneNumber;
   @override
