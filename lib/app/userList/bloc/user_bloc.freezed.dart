@@ -20,18 +20,27 @@ mixin _$UserEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() fetchUsers,
     required TResult Function(String query) filterUsers,
+    required TResult Function() loadUsersFromDatabase,
+    required TResult Function(int userId) deleteUser,
+    required TResult Function() deleteAllUsers,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? fetchUsers,
     TResult? Function(String query)? filterUsers,
+    TResult? Function()? loadUsersFromDatabase,
+    TResult? Function(int userId)? deleteUser,
+    TResult? Function()? deleteAllUsers,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? fetchUsers,
     TResult Function(String query)? filterUsers,
+    TResult Function()? loadUsersFromDatabase,
+    TResult Function(int userId)? deleteUser,
+    TResult Function()? deleteAllUsers,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -39,18 +48,28 @@ mixin _$UserEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(FetchUsers value) fetchUsers,
     required TResult Function(FilterUsers value) filterUsers,
+    required TResult Function(LoadUsersFromDatabase value)
+        loadUsersFromDatabase,
+    required TResult Function(DeleteUser value) deleteUser,
+    required TResult Function(DeleteAllUsers value) deleteAllUsers,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(FetchUsers value)? fetchUsers,
     TResult? Function(FilterUsers value)? filterUsers,
+    TResult? Function(LoadUsersFromDatabase value)? loadUsersFromDatabase,
+    TResult? Function(DeleteUser value)? deleteUser,
+    TResult? Function(DeleteAllUsers value)? deleteAllUsers,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(FetchUsers value)? fetchUsers,
     TResult Function(FilterUsers value)? filterUsers,
+    TResult Function(LoadUsersFromDatabase value)? loadUsersFromDatabase,
+    TResult Function(DeleteUser value)? deleteUser,
+    TResult Function(DeleteAllUsers value)? deleteAllUsers,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -113,6 +132,9 @@ class _$FetchUsersImpl implements FetchUsers {
   TResult when<TResult extends Object?>({
     required TResult Function() fetchUsers,
     required TResult Function(String query) filterUsers,
+    required TResult Function() loadUsersFromDatabase,
+    required TResult Function(int userId) deleteUser,
+    required TResult Function() deleteAllUsers,
   }) {
     return fetchUsers();
   }
@@ -122,6 +144,9 @@ class _$FetchUsersImpl implements FetchUsers {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? fetchUsers,
     TResult? Function(String query)? filterUsers,
+    TResult? Function()? loadUsersFromDatabase,
+    TResult? Function(int userId)? deleteUser,
+    TResult? Function()? deleteAllUsers,
   }) {
     return fetchUsers?.call();
   }
@@ -131,6 +156,9 @@ class _$FetchUsersImpl implements FetchUsers {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? fetchUsers,
     TResult Function(String query)? filterUsers,
+    TResult Function()? loadUsersFromDatabase,
+    TResult Function(int userId)? deleteUser,
+    TResult Function()? deleteAllUsers,
     required TResult orElse(),
   }) {
     if (fetchUsers != null) {
@@ -144,6 +172,10 @@ class _$FetchUsersImpl implements FetchUsers {
   TResult map<TResult extends Object?>({
     required TResult Function(FetchUsers value) fetchUsers,
     required TResult Function(FilterUsers value) filterUsers,
+    required TResult Function(LoadUsersFromDatabase value)
+        loadUsersFromDatabase,
+    required TResult Function(DeleteUser value) deleteUser,
+    required TResult Function(DeleteAllUsers value) deleteAllUsers,
   }) {
     return fetchUsers(this);
   }
@@ -153,6 +185,9 @@ class _$FetchUsersImpl implements FetchUsers {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(FetchUsers value)? fetchUsers,
     TResult? Function(FilterUsers value)? filterUsers,
+    TResult? Function(LoadUsersFromDatabase value)? loadUsersFromDatabase,
+    TResult? Function(DeleteUser value)? deleteUser,
+    TResult? Function(DeleteAllUsers value)? deleteAllUsers,
   }) {
     return fetchUsers?.call(this);
   }
@@ -162,6 +197,9 @@ class _$FetchUsersImpl implements FetchUsers {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(FetchUsers value)? fetchUsers,
     TResult Function(FilterUsers value)? filterUsers,
+    TResult Function(LoadUsersFromDatabase value)? loadUsersFromDatabase,
+    TResult Function(DeleteUser value)? deleteUser,
+    TResult Function(DeleteAllUsers value)? deleteAllUsers,
     required TResult orElse(),
   }) {
     if (fetchUsers != null) {
@@ -241,6 +279,9 @@ class _$FilterUsersImpl implements FilterUsers {
   TResult when<TResult extends Object?>({
     required TResult Function() fetchUsers,
     required TResult Function(String query) filterUsers,
+    required TResult Function() loadUsersFromDatabase,
+    required TResult Function(int userId) deleteUser,
+    required TResult Function() deleteAllUsers,
   }) {
     return filterUsers(query);
   }
@@ -250,6 +291,9 @@ class _$FilterUsersImpl implements FilterUsers {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? fetchUsers,
     TResult? Function(String query)? filterUsers,
+    TResult? Function()? loadUsersFromDatabase,
+    TResult? Function(int userId)? deleteUser,
+    TResult? Function()? deleteAllUsers,
   }) {
     return filterUsers?.call(query);
   }
@@ -259,6 +303,9 @@ class _$FilterUsersImpl implements FilterUsers {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? fetchUsers,
     TResult Function(String query)? filterUsers,
+    TResult Function()? loadUsersFromDatabase,
+    TResult Function(int userId)? deleteUser,
+    TResult Function()? deleteAllUsers,
     required TResult orElse(),
   }) {
     if (filterUsers != null) {
@@ -272,6 +319,10 @@ class _$FilterUsersImpl implements FilterUsers {
   TResult map<TResult extends Object?>({
     required TResult Function(FetchUsers value) fetchUsers,
     required TResult Function(FilterUsers value) filterUsers,
+    required TResult Function(LoadUsersFromDatabase value)
+        loadUsersFromDatabase,
+    required TResult Function(DeleteUser value) deleteUser,
+    required TResult Function(DeleteAllUsers value) deleteAllUsers,
   }) {
     return filterUsers(this);
   }
@@ -281,6 +332,9 @@ class _$FilterUsersImpl implements FilterUsers {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(FetchUsers value)? fetchUsers,
     TResult? Function(FilterUsers value)? filterUsers,
+    TResult? Function(LoadUsersFromDatabase value)? loadUsersFromDatabase,
+    TResult? Function(DeleteUser value)? deleteUser,
+    TResult? Function(DeleteAllUsers value)? deleteAllUsers,
   }) {
     return filterUsers?.call(this);
   }
@@ -290,6 +344,9 @@ class _$FilterUsersImpl implements FilterUsers {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(FetchUsers value)? fetchUsers,
     TResult Function(FilterUsers value)? filterUsers,
+    TResult Function(LoadUsersFromDatabase value)? loadUsersFromDatabase,
+    TResult Function(DeleteUser value)? deleteUser,
+    TResult Function(DeleteAllUsers value)? deleteAllUsers,
     required TResult orElse(),
   }) {
     if (filterUsers != null) {
@@ -306,6 +363,402 @@ abstract class FilterUsers implements UserEvent {
   @JsonKey(ignore: true)
   _$$FilterUsersImplCopyWith<_$FilterUsersImpl> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$LoadUsersFromDatabaseImplCopyWith<$Res> {
+  factory _$$LoadUsersFromDatabaseImplCopyWith(
+          _$LoadUsersFromDatabaseImpl value,
+          $Res Function(_$LoadUsersFromDatabaseImpl) then) =
+      __$$LoadUsersFromDatabaseImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$LoadUsersFromDatabaseImplCopyWithImpl<$Res>
+    extends _$UserEventCopyWithImpl<$Res, _$LoadUsersFromDatabaseImpl>
+    implements _$$LoadUsersFromDatabaseImplCopyWith<$Res> {
+  __$$LoadUsersFromDatabaseImplCopyWithImpl(_$LoadUsersFromDatabaseImpl _value,
+      $Res Function(_$LoadUsersFromDatabaseImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$LoadUsersFromDatabaseImpl implements LoadUsersFromDatabase {
+  const _$LoadUsersFromDatabaseImpl();
+
+  @override
+  String toString() {
+    return 'UserEvent.loadUsersFromDatabase()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$LoadUsersFromDatabaseImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() fetchUsers,
+    required TResult Function(String query) filterUsers,
+    required TResult Function() loadUsersFromDatabase,
+    required TResult Function(int userId) deleteUser,
+    required TResult Function() deleteAllUsers,
+  }) {
+    return loadUsersFromDatabase();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? fetchUsers,
+    TResult? Function(String query)? filterUsers,
+    TResult? Function()? loadUsersFromDatabase,
+    TResult? Function(int userId)? deleteUser,
+    TResult? Function()? deleteAllUsers,
+  }) {
+    return loadUsersFromDatabase?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? fetchUsers,
+    TResult Function(String query)? filterUsers,
+    TResult Function()? loadUsersFromDatabase,
+    TResult Function(int userId)? deleteUser,
+    TResult Function()? deleteAllUsers,
+    required TResult orElse(),
+  }) {
+    if (loadUsersFromDatabase != null) {
+      return loadUsersFromDatabase();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(FetchUsers value) fetchUsers,
+    required TResult Function(FilterUsers value) filterUsers,
+    required TResult Function(LoadUsersFromDatabase value)
+        loadUsersFromDatabase,
+    required TResult Function(DeleteUser value) deleteUser,
+    required TResult Function(DeleteAllUsers value) deleteAllUsers,
+  }) {
+    return loadUsersFromDatabase(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(FetchUsers value)? fetchUsers,
+    TResult? Function(FilterUsers value)? filterUsers,
+    TResult? Function(LoadUsersFromDatabase value)? loadUsersFromDatabase,
+    TResult? Function(DeleteUser value)? deleteUser,
+    TResult? Function(DeleteAllUsers value)? deleteAllUsers,
+  }) {
+    return loadUsersFromDatabase?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(FetchUsers value)? fetchUsers,
+    TResult Function(FilterUsers value)? filterUsers,
+    TResult Function(LoadUsersFromDatabase value)? loadUsersFromDatabase,
+    TResult Function(DeleteUser value)? deleteUser,
+    TResult Function(DeleteAllUsers value)? deleteAllUsers,
+    required TResult orElse(),
+  }) {
+    if (loadUsersFromDatabase != null) {
+      return loadUsersFromDatabase(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class LoadUsersFromDatabase implements UserEvent {
+  const factory LoadUsersFromDatabase() = _$LoadUsersFromDatabaseImpl;
+}
+
+/// @nodoc
+abstract class _$$DeleteUserImplCopyWith<$Res> {
+  factory _$$DeleteUserImplCopyWith(
+          _$DeleteUserImpl value, $Res Function(_$DeleteUserImpl) then) =
+      __$$DeleteUserImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({int userId});
+}
+
+/// @nodoc
+class __$$DeleteUserImplCopyWithImpl<$Res>
+    extends _$UserEventCopyWithImpl<$Res, _$DeleteUserImpl>
+    implements _$$DeleteUserImplCopyWith<$Res> {
+  __$$DeleteUserImplCopyWithImpl(
+      _$DeleteUserImpl _value, $Res Function(_$DeleteUserImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? userId = null,
+  }) {
+    return _then(_$DeleteUserImpl(
+      null == userId
+          ? _value.userId
+          : userId // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$DeleteUserImpl implements DeleteUser {
+  const _$DeleteUserImpl(this.userId);
+
+  @override
+  final int userId;
+
+  @override
+  String toString() {
+    return 'UserEvent.deleteUser(userId: $userId)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DeleteUserImpl &&
+            (identical(other.userId, userId) || other.userId == userId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, userId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$DeleteUserImplCopyWith<_$DeleteUserImpl> get copyWith =>
+      __$$DeleteUserImplCopyWithImpl<_$DeleteUserImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() fetchUsers,
+    required TResult Function(String query) filterUsers,
+    required TResult Function() loadUsersFromDatabase,
+    required TResult Function(int userId) deleteUser,
+    required TResult Function() deleteAllUsers,
+  }) {
+    return deleteUser(userId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? fetchUsers,
+    TResult? Function(String query)? filterUsers,
+    TResult? Function()? loadUsersFromDatabase,
+    TResult? Function(int userId)? deleteUser,
+    TResult? Function()? deleteAllUsers,
+  }) {
+    return deleteUser?.call(userId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? fetchUsers,
+    TResult Function(String query)? filterUsers,
+    TResult Function()? loadUsersFromDatabase,
+    TResult Function(int userId)? deleteUser,
+    TResult Function()? deleteAllUsers,
+    required TResult orElse(),
+  }) {
+    if (deleteUser != null) {
+      return deleteUser(userId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(FetchUsers value) fetchUsers,
+    required TResult Function(FilterUsers value) filterUsers,
+    required TResult Function(LoadUsersFromDatabase value)
+        loadUsersFromDatabase,
+    required TResult Function(DeleteUser value) deleteUser,
+    required TResult Function(DeleteAllUsers value) deleteAllUsers,
+  }) {
+    return deleteUser(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(FetchUsers value)? fetchUsers,
+    TResult? Function(FilterUsers value)? filterUsers,
+    TResult? Function(LoadUsersFromDatabase value)? loadUsersFromDatabase,
+    TResult? Function(DeleteUser value)? deleteUser,
+    TResult? Function(DeleteAllUsers value)? deleteAllUsers,
+  }) {
+    return deleteUser?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(FetchUsers value)? fetchUsers,
+    TResult Function(FilterUsers value)? filterUsers,
+    TResult Function(LoadUsersFromDatabase value)? loadUsersFromDatabase,
+    TResult Function(DeleteUser value)? deleteUser,
+    TResult Function(DeleteAllUsers value)? deleteAllUsers,
+    required TResult orElse(),
+  }) {
+    if (deleteUser != null) {
+      return deleteUser(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DeleteUser implements UserEvent {
+  const factory DeleteUser(final int userId) = _$DeleteUserImpl;
+
+  int get userId;
+  @JsonKey(ignore: true)
+  _$$DeleteUserImplCopyWith<_$DeleteUserImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$DeleteAllUsersImplCopyWith<$Res> {
+  factory _$$DeleteAllUsersImplCopyWith(_$DeleteAllUsersImpl value,
+          $Res Function(_$DeleteAllUsersImpl) then) =
+      __$$DeleteAllUsersImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$DeleteAllUsersImplCopyWithImpl<$Res>
+    extends _$UserEventCopyWithImpl<$Res, _$DeleteAllUsersImpl>
+    implements _$$DeleteAllUsersImplCopyWith<$Res> {
+  __$$DeleteAllUsersImplCopyWithImpl(
+      _$DeleteAllUsersImpl _value, $Res Function(_$DeleteAllUsersImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$DeleteAllUsersImpl implements DeleteAllUsers {
+  const _$DeleteAllUsersImpl();
+
+  @override
+  String toString() {
+    return 'UserEvent.deleteAllUsers()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$DeleteAllUsersImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() fetchUsers,
+    required TResult Function(String query) filterUsers,
+    required TResult Function() loadUsersFromDatabase,
+    required TResult Function(int userId) deleteUser,
+    required TResult Function() deleteAllUsers,
+  }) {
+    return deleteAllUsers();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? fetchUsers,
+    TResult? Function(String query)? filterUsers,
+    TResult? Function()? loadUsersFromDatabase,
+    TResult? Function(int userId)? deleteUser,
+    TResult? Function()? deleteAllUsers,
+  }) {
+    return deleteAllUsers?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? fetchUsers,
+    TResult Function(String query)? filterUsers,
+    TResult Function()? loadUsersFromDatabase,
+    TResult Function(int userId)? deleteUser,
+    TResult Function()? deleteAllUsers,
+    required TResult orElse(),
+  }) {
+    if (deleteAllUsers != null) {
+      return deleteAllUsers();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(FetchUsers value) fetchUsers,
+    required TResult Function(FilterUsers value) filterUsers,
+    required TResult Function(LoadUsersFromDatabase value)
+        loadUsersFromDatabase,
+    required TResult Function(DeleteUser value) deleteUser,
+    required TResult Function(DeleteAllUsers value) deleteAllUsers,
+  }) {
+    return deleteAllUsers(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(FetchUsers value)? fetchUsers,
+    TResult? Function(FilterUsers value)? filterUsers,
+    TResult? Function(LoadUsersFromDatabase value)? loadUsersFromDatabase,
+    TResult? Function(DeleteUser value)? deleteUser,
+    TResult? Function(DeleteAllUsers value)? deleteAllUsers,
+  }) {
+    return deleteAllUsers?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(FetchUsers value)? fetchUsers,
+    TResult Function(FilterUsers value)? filterUsers,
+    TResult Function(LoadUsersFromDatabase value)? loadUsersFromDatabase,
+    TResult Function(DeleteUser value)? deleteUser,
+    TResult Function(DeleteAllUsers value)? deleteAllUsers,
+    required TResult orElse(),
+  }) {
+    if (deleteAllUsers != null) {
+      return deleteAllUsers(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DeleteAllUsers implements UserEvent {
+  const factory DeleteAllUsers() = _$DeleteAllUsersImpl;
 }
 
 /// @nodoc

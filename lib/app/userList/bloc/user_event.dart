@@ -4,4 +4,10 @@ part of 'user_bloc.dart';
 class UserEvent with _$UserEvent {
   const factory UserEvent.fetchUsers() = FetchUsers;
   const factory UserEvent.filterUsers(String query) = FilterUsers;
+  const factory UserEvent.loadUsersFromDatabase() = LoadUsersFromDatabase;
+  const factory UserEvent.deleteUser(
+    int userId,
+  ) = DeleteUser;
+  const factory UserEvent.deleteAllUsers() =
+      DeleteAllUsers; // Event for deleting all users
 }

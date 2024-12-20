@@ -26,7 +26,7 @@ class UserDetailsScreen extends StatelessWidget {
                       style: const TextStyle(
                           fontSize: 18, fontWeight: FontWeight.bold)),
                   const SizedBox(height: 10),
-                  Text("Username: ${user.userName}",
+                  Text("Username: ${user.username}",
                       style: const TextStyle(fontSize: 16)),
                   const SizedBox(height: 10),
                   Text("Email: ${user.email}", style: TextStyle(fontSize: 16)),

@@ -8,7 +8,7 @@ part 'auth_model.g.dart';
 class AuthenticationModel with _$AuthenticationModel {
   factory AuthenticationModel({
     int? userId,
-    required String userName,
+    required String authuserName,
     required String userPhoneNumber,
     required String userPassword,
   }) = _AuthenticationModel;
@@ -18,7 +18,7 @@ class AuthenticationModel with _$AuthenticationModel {
 
 final userData = [
   AuthenticationModel(
-      userName: "Bharat",
+      authuserName: "Bharat",
       userPhoneNumber: "9111174235",
       userPassword: 'bharat123')
 ];

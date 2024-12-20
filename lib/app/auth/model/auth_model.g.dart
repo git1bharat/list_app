@@ -10,7 +10,7 @@ _$AuthenticationModelImpl _$$AuthenticationModelImplFromJson(
         Map<String, dynamic> json) =>
     _$AuthenticationModelImpl(
       userId: (json['userId'] as num?)?.toInt(),
-      userName: json['userName'] as String,
+      authuserName: json['authuserName'] as String,
       userPhoneNumber: json['userPhoneNumber'] as String,
       userPassword: json['userPassword'] as String,
     );
@@ -19,7 +19,7 @@ Map<String, dynamic> _$$AuthenticationModelImplToJson(
         _$AuthenticationModelImpl instance) =>
     <String, dynamic>{
       'userId': instance.userId,
-      'userName': instance.userName,
+      'authuserName': instance.authuserName,
       'userPhoneNumber': instance.userPhoneNumber,
       'userPassword': instance.userPassword,
     };
