@@ -14,6 +14,8 @@ class UserBloc extends Bloc<UserEvent, UserState> {
     on<FetchUsers>(_onFetchUsers);
     // on<LoadUsersFromDatabase>(_onLoadUsersFromDatabase);
     on<DeleteUser>(_onDeleteUser); // Handle single user delete
+    on<FilterUsers>(_onFilterUsers);
+    on<UpdateUser>(_onUpdateUser);
   }
 
   Future<void> _onFetchUsers(FetchUsers event, Emitter<UserState> emit) async {
@@ -47,6 +49,31 @@ class UserBloc extends Bloc<UserEvent, UserState> {
     emit(const UserState.loading());
     try {
       await _userRepository.deleteUser(event.userId);
+      final users = await _userRepository.getUsersFromDatabase();
+      emit(UserState.loaded(users));
+    } catch (e) {
+      emit(UserState.error(e.toString()));
+    }
+  }
+
+  Future<void> _onFilterUsers(
+      FilterUsers event, Emitter<UserState> emit) async {
+    emit(const UserState.loading());
+    try {
+      // Retrieve filtered list of users from the repository
+      final List<User> filteredUsers =
+          await _userRepository.getUsersBySearchTerm(event.query);
+      emit(UserState.loaded(filteredUsers));
+    } catch (e) {
+      print('Error filtering users: $e');
+      emit(UserState.error(e.toString()));
+    }
+  }
+
+  Future<void> _onUpdateUser(UpdateUser event, Emitter<UserState> emit) async {
+    emit(const UserState.loading());
+    try {
+      await _userRepository.updateUser(event.user);
       final users = await _userRepository.getUsersFromDatabase();
       emit(UserState.loaded(users));
     } catch (e) {

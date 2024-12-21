@@ -150,4 +150,32 @@ class DbHelper {
       throw Exception('Error deleting user');
     }
   }
+
+  // Filter users by name, username, or email
+  Future<List<User>> filterUsers(String searchTerm) async {
+    final database = await instance.database;
+    final result = await database!.query(
+      userTable,
+      where: '$name LIKE ? OR $userName LIKE ? OR $email LIKE ?',
+      whereArgs: ['%$searchTerm%', '%$searchTerm%', '%$searchTerm%'],
+    );
+    return result.map((json) => User.fromJson(json)).toList();
+  }
+
+  Future<void> updateUser(User user) async {
+    final database = await instance.database;
+    try {
+      await database!.update(
+        userTable,
+        user.toJson(),
+        where: '$id = ?', // Match the user ID
+        whereArgs: [user.id],
+      );
+      logger
+          .i('User with ID ${user.id} updated successfully: ${user.toJson()}');
+    } catch (e) {
+      logger.e('Error updating user with ID ${user.id}: $e');
+      throw Exception('Error updating user');
+    }
+  }
 }

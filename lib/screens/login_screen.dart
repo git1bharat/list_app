@@ -45,83 +45,85 @@ class _LoginScreenState extends State<LoginScreen> {
                 );
               });
         },
-        child: Column(
-          children: [
-            const SizedBox(
-              height: 350,
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 10,
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              const SizedBox(
+                height: 350,
               ),
-              child: Form(
-                key: _formKey,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    ListAppTextField(
-                      controller: phoneTextController,
-                      prefixIcon: const Icon(Icons.phone),
-                      keyboardType: TextInputType.number,
-                      hintText: 'Mobile',
-                      validation: (value) {
-                        if (value!.isEmpty) {
-                          return 'Enter your number';
-                        }
-                        if (value.trim().length != 10 ||
-                            !RegExp(r'^[0-9]+$').hasMatch(value.trim())) {
-                          return 'Invalid mobile number';
-                        }
-                        return null;
-                      },
-                    ),
-                    const SizedBox(height: 10),
-                    ListAppTextField(
-                      controller: passwordTextController,
-                      prefixIcon: const Icon(Icons.password),
-                      hintText: 'Password',
-                      validation: (value) {
-                        if (value!.isEmpty) {
-                          return 'Enter your password';
-                        }
-                        return null;
-                      },
-                    ),
-                    const SizedBox(height: 10),
-                    ListAppButton(
-                      buttonName: 'Login',
-                      onTap: () {
-                        if (_formKey.currentState!.validate()) {
-                          BlocProvider.of<AuthBloc>(context).add(
-                              AuthEvent.login(phoneTextController.text,
-                                  passwordTextController.text));
-                        }
-                      },
-                    ),
-                  ],
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 10,
+                ),
+                child: Form(
+                  key: _formKey,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      ListAppTextField(
+                        controller: phoneTextController,
+                        prefixIcon: const Icon(Icons.phone),
+                        keyboardType: TextInputType.number,
+                        hintText: 'Mobile',
+                        validation: (value) {
+                          if (value!.isEmpty) {
+                            return 'Enter your number';
+                          }
+                          if (value.trim().length != 10 ||
+                              !RegExp(r'^[0-9]+$').hasMatch(value.trim())) {
+                            return 'Invalid mobile number';
+                          }
+                          return null;
+                        },
+                      ),
+                      const SizedBox(height: 10),
+                      ListAppTextField(
+                        controller: passwordTextController,
+                        prefixIcon: const Icon(Icons.password),
+                        hintText: 'Password',
+                        validation: (value) {
+                          if (value!.isEmpty) {
+                            return 'Enter your password';
+                          }
+                          return null;
+                        },
+                      ),
+                      const SizedBox(height: 10),
+                      ListAppButton(
+                        buttonName: 'Login',
+                        onTap: () {
+                          if (_formKey.currentState!.validate()) {
+                            BlocProvider.of<AuthBloc>(context).add(
+                                AuthEvent.login(phoneTextController.text,
+                                    passwordTextController.text));
+                          }
+                        },
+                      ),
+                    ],
+                  ),
                 ),
               ),
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                GestureDetector(
-                  onTap: () {},
-                  child: const Text('Forgotten password?'),
-                ),
-                SizedBox(
-                  width: 5,
-                ),
-                GestureDetector(
-                  onTap: () {
-                    Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => const SignUpScreen()));
-                  },
-                  child: const Text('Sign Up to create account'),
-                ),
-              ],
-            )
-          ],
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  GestureDetector(
+                    onTap: () {},
+                    child: const Text('Forgotten password?'),
+                  ),
+                  SizedBox(
+                    width: 5,
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => const SignUpScreen()));
+                    },
+                    child: const Text('Sign Up to create account'),
+                  ),
+                ],
+              )
+            ],
+          ),
         ),
       ),
     );

@@ -53,4 +53,19 @@ class UserRepository {
       throw Exception('Error deleting user');
     }
   }
+
+  // Get users by search term (name, username, or email)
+  Future<List<User>> getUsersBySearchTerm(String searchTerm) async {
+    return await _dbHelper.filterUsers(searchTerm);
+  }
+
+  Future<void> updateUser(User user) async {
+    try {
+      await _dbHelper.updateUser(user);
+      print('User with ID ${user.id} updated successfully');
+    } catch (e) {
+      print('Error updating user with ID ${user.id}: $e');
+      throw Exception('Error updating user');
+    }
+  }
 }
