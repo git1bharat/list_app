@@ -1,16 +1,32 @@
 # list_app
 
-A new Flutter project.
+
+its simple app which perform authentication and fetch user list from api 
+
+## packages
+
+- **Local Database**: Utilizes `sqflite` for local data storage.
+- **State Management**: Implements `bloc` for state management to ensure a clean and understandable flow of data.
+- **Data Serialization**: Uses `freezed` to generate immutable data structures and value equality.
+- **Preferences Storage**: Integrates `shared_preferences` to store and retrieve user preferences.
+- **Network Requests**: Employs `dio` for making HTTP requests and handling API interactions.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-A few resources to get you started if this is your first Flutter project:
+### Prerequisites
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+What things you need to install the software and how to install them:
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```bash
+flutter pub get
+Clone the repository:
+git clone https://github.com/yourusername/your-app-name.git
+Navigate to the project directory:
+cd your-app-name
+Install dependencies:
+flutter pub get
+Run the app:
+flutter run
+
