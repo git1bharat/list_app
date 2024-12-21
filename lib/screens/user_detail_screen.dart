@@ -17,7 +17,7 @@ class _UserDetailsScreenState extends State<UserDetailsScreen> {
   @override
   void initState() {
     super.initState();
-    user = widget.user; // Initialize the local user state
+    user = widget.user;
   }
 
   void _showEditDialog(BuildContext context) {
@@ -27,7 +27,7 @@ class _UserDetailsScreenState extends State<UserDetailsScreen> {
         user: user,
         onSave: (updatedUser) {
           setState(() {
-            user = updatedUser; // Update the local state
+            user = updatedUser;
           });
         },
       ),

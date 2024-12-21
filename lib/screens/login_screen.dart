@@ -28,9 +28,7 @@ class _LoginScreenState extends State<LoginScreen> {
               initial: () {},
               loading: () {},
               loginSuccess: () {
-                Navigator.of(context).pushReplacement(
-                  MaterialPageRoute(builder: (context) => const HomeScreen()),
-                );
+                Navigator.of(context).pushReplacementNamed('/homeScreen');
               },
               loginFailure: (message) {
                 ScaffoldMessenger.of(context).showSnackBar(
@@ -115,8 +113,8 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   GestureDetector(
                     onTap: () {
-                      Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => const SignUpScreen()));
+                      Navigator.of(context)
+                          .pushReplacementNamed('/signUpScreen');
                     },
                     child: const Text('Sign Up to create account'),
                   ),
@@ -129,38 +127,3 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 }
-
-
-
-
-
-  //  if (_formKey.currentState!.validate()) {
-  //                               String? loginResult =
-  //                                  quizBloc.add(QuizEvent.login(phoneTextController.text, passwordTextController.text))
-
-  //                               if (loginResult == "success") {
-  //                                 Navigator.of(context).pushReplacement(
-  //                                   MaterialPageRoute(
-  //                                       builder: (context) =>
-  //                                           const QuizScreen()),
-  //                                 );
-  //                               } else if (loginResult == "number_not_found") {
-  //                                 ScaffoldMessenger.of(context).showSnackBar(
-  //                                   const SnackBar(
-  //                                       content: Text(
-  //                                           'Account not found with this number')),
-  //                                 );
-  //                               } else if (loginResult ==
-  //                                   "incorrect_password") {
-  //                                 ScaffoldMessenger.of(context).showSnackBar(
-  //                                   const SnackBar(
-  //                                       content: Text('Incorrect password')),
-  //                                 );
-  //                               } else {
-  //                                 ScaffoldMessenger.of(context).showSnackBar(
-  //                                   const SnackBar(
-  //                                       content: Text(
-  //                                           'An unexpected error occurred')),
-  //                                 );
-  //                               }
-  //                             }

@@ -10,17 +10,14 @@ class UserRepository {
   final Dio _dio = Dio();
   final DbHelper _dbHelper = DbHelper.init();
 
-  // Fetch users from the API and store them in the database
   Future<void> fetchAndStoreUsers() async {
     try {
-      // Fetch data from the API
       final response =
           await _dio.get('https://jsonplaceholder.typicode.com/users');
       if (response.statusCode == 200) {
         List<User> userList =
             (response.data as List).map((user) => User.fromJson(user)).toList();
 
-        // Save each user to the database
         for (var user in userList) {
           await _dbHelper.insertUser(user);
         }
@@ -34,7 +31,6 @@ class UserRepository {
     }
   }
 
-  // Retrieve users from the database
   Future<List<User>> getUsersFromDatabase() async {
     try {
       return await _dbHelper.getUsers();
@@ -46,7 +42,7 @@ class UserRepository {
 
   Future<void> deleteUser(int userId) async {
     try {
-      await _dbHelper.deleteUserById(userId); // Deletes user by their ID
+      await _dbHelper.deleteUserById(userId);
       print('User with ID $userId deleted successfully');
     } catch (e) {
       print('Error deleting user with ID $userId: $e');
@@ -54,7 +50,6 @@ class UserRepository {
     }
   }
 
-  // Get users by search term (name, username, or email)
   Future<List<User>> getUsersBySearchTerm(String searchTerm) async {
     return await _dbHelper.filterUsers(searchTerm);
   }

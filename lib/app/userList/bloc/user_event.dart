@@ -10,6 +10,5 @@ class UserEvent with _$UserEvent {
   const factory UserEvent.deleteUser(
     int userId,
   ) = DeleteUser;
-  const factory UserEvent.deleteAllUsers() =
-      DeleteAllUsers; // Event for deleting all users
+  const factory UserEvent.deleteAllUsers() = DeleteAllUsers;
 }

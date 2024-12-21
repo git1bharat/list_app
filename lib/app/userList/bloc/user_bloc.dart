@@ -12,8 +12,7 @@ class UserBloc extends Bloc<UserEvent, UserState> {
 
   UserBloc(this._userRepository) : super(const UserState.initial()) {
     on<FetchUsers>(_onFetchUsers);
-    // on<LoadUsersFromDatabase>(_onLoadUsersFromDatabase);
-    on<DeleteUser>(_onDeleteUser); // Handle single user delete
+    on<DeleteUser>(_onDeleteUser);
     on<FilterUsers>(_onFilterUsers);
     on<UpdateUser>(_onUpdateUser);
   }
@@ -21,20 +20,16 @@ class UserBloc extends Bloc<UserEvent, UserState> {
   Future<void> _onFetchUsers(FetchUsers event, Emitter<UserState> emit) async {
     emit(const UserState.loading());
     try {
-      // Check if users exist in the database
       final List<User> existingUsers =
           await _userRepository.getUsersFromDatabase();
 
       if (existingUsers.isNotEmpty) {
-        // If data exists in the database, load it directly
         print('Loading users directly from the database: $existingUsers');
         emit(UserState.loaded(existingUsers));
       } else {
-        // If no data in the database, fetch from API and store in database
         await _userRepository.fetchAndStoreUsers();
         print('Users successfully fetched and stored from API');
 
-        // Load users from the database after fetching
         final List<User> users = await _userRepository.getUsersFromDatabase();
         print('Users loaded from database after API fetch: $users');
         emit(UserState.loaded(users));
@@ -60,7 +55,6 @@ class UserBloc extends Bloc<UserEvent, UserState> {
       FilterUsers event, Emitter<UserState> emit) async {
     emit(const UserState.loading());
     try {
-      // Retrieve filtered list of users from the repository
       final List<User> filteredUsers =
           await _userRepository.getUsersBySearchTerm(event.query);
       emit(UserState.loaded(filteredUsers));
