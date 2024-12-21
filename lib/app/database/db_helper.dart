@@ -1,5 +1,4 @@
 import 'dart:math';
-
 import 'package:list_app/app/auth/model/auth_model.dart';
 import 'package:list_app/app/userList/model/user_model.dart';
 import 'package:logger/logger.dart';
@@ -18,7 +17,6 @@ class DbHelper {
   static const authuserName = "authuserName";
   static const userPhoneNumber = 'userPhoneNumber';
   static const userPassword = 'userPassword';
-
   static const userTable = "userTable";
   static const id = "id";
   static const name = "name";
@@ -67,8 +65,8 @@ class DbHelper {
    )
 ''');
 
-    for (var quiz in userData) {
-      final id = await db.insert(authTable, quiz.toJson());
+    for (var user in userData) {
+      final id = await db.insert(authTable, user.toJson());
       print("Here is your ID data: $id  $authTable");
     }
   }
@@ -112,16 +110,11 @@ class DbHelper {
     }
   }
 
-  /// Retrieves all Users from the userTable
   Future<List<User>> getUsers() async {
     final database = await instance.database;
     try {
       final result = await database!.query(userTable);
-
-      // Log the database result for debugging
       print('Database query result: $result');
-
-      // Safely map the results and handle null values
       return result.map((json) {
         try {
           return User.fromJson(json);
@@ -151,7 +144,6 @@ class DbHelper {
     }
   }
 
-  // Filter users by name, username, or email
   Future<List<User>> filterUsers(String searchTerm) async {
     final database = await instance.database;
     final result = await database!.query(
@@ -168,7 +160,7 @@ class DbHelper {
       await database!.update(
         userTable,
         user.toJson(),
-        where: '$id = ?', // Match the user ID
+        where: '$id = ?',
         whereArgs: [user.id],
       );
       logger

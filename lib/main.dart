@@ -9,6 +9,7 @@ import 'package:list_app/app/userList/bloc/user_bloc.dart';
 import 'package:list_app/app/userList/repository/user_repository.dart';
 import 'package:list_app/screens/home_screen.dart';
 import 'package:list_app/screens/login_screen.dart';
+import 'package:list_app/screens/signUp_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,7 +20,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Initialize DbHelper here
     final DbHelper dbHelper = DbHelper.init();
 
     return MultiBlocProvider(
@@ -44,23 +44,26 @@ class MyApp extends StatelessWidget {
             colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
             useMaterial3: true,
           ),
-          home: FutureBuilder(
-            future: SessionManager().isLoggedIn(),
-            builder: (context, snapshot) {
-              if (snapshot.connectionState == ConnectionState.done) {
-                if (snapshot.data == true) {
-                  // User is logged in, send them to the home screen
-                  return HomeScreen();
-                } else {
-                  // User is not logged in, send them to the login screen
-                  return LoginScreen();
-                }
-              } else {
-                // Show a loading spinner while checking login status
-                return Center(child: CircularProgressIndicator());
-              }
-            },
-          ),
+          initialRoute: '/',
+          routes: {
+            '/': (context) => FutureBuilder<bool>(
+                  future: SessionManager().isLoggedIn(),
+                  builder: (context, snapshot) {
+                    if (snapshot.connectionState == ConnectionState.done) {
+                      // Use the data to determine the initial route
+                      return snapshot.data == true
+                          ? HomeScreen()
+                          : LoginScreen();
+                    } else {
+                      // Show loading spinner while checking session status
+                      return const Center(child: CircularProgressIndicator());
+                    }
+                  },
+                ),
+            '/homeScreen': (context) => HomeScreen(),
+            '/loginScreen': (context) => LoginScreen(),
+            '/signUpScreen': (context) => SignUpScreen(),
+          },
         ),
       ),
     );

@@ -2,22 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:list_app/app/auth/auth_token.dart';
 import 'package:list_app/app/userList/bloc/user_bloc.dart';
-import 'package:list_app/app/userList/model/user_model.dart';
-import 'package:list_app/screens/login_screen.dart';
 import 'package:list_app/screens/user_detail_screen.dart';
-
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:list_app/app/userList/bloc/user_bloc.dart';
-import 'package:list_app/app/userList/model/user_model.dart';
-import 'package:list_app/screens/user_detail_screen.dart';
-
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:list_app/app/userList/bloc/user_bloc.dart';
-import 'package:list_app/app/userList/model/user_model.dart';
-import 'package:list_app/screens/user_detail_screen.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -43,7 +28,6 @@ class _HomeScreenState extends State<HomeScreen> {
 
   void _onSearchChanged(String searchQuery) {
     if (searchQuery.isEmpty) {
-      // Optionally re-fetch the original list if needed when search is cleared
       context.read<UserBloc>().add(const FetchUsers());
     } else {
       context.read<UserBloc>().add(UserEvent.filterUsers(searchQuery));
@@ -60,8 +44,7 @@ class _HomeScreenState extends State<HomeScreen> {
             icon: const Icon(Icons.logout),
             onPressed: () async {
               await SessionManager().logout();
-              Navigator.of(context).pushReplacement(
-                  MaterialPageRoute(builder: (context) => const LoginScreen()));
+              Navigator.of(context).pushReplacementNamed('/loginScreen');
             },
           ),
         ],
@@ -73,8 +56,7 @@ class _HomeScreenState extends State<HomeScreen> {
               padding: const EdgeInsets.all(8.0),
               child: TextField(
                 controller: _searchController,
-                onChanged:
-                    _onSearchChanged, // Use onChanged instead of onSubmitted
+                onChanged: _onSearchChanged,
                 decoration: InputDecoration(
                   suffixIcon: Icon(Icons.search),
                   border: OutlineInputBorder(

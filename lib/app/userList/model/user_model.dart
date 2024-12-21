@@ -22,7 +22,6 @@ class User with _$User {
   factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
 }
 
-// Helpers for Address
 Address _addressFromJson(dynamic json) {
   if (json is String) {
     return Address.fromJson(jsonDecode(json));
@@ -35,7 +34,6 @@ Address _addressFromJson(dynamic json) {
 
 String _addressToJson(Address address) => jsonEncode(address.toJson());
 
-// Helpers for Company
 Company _companyFromJson(dynamic json) {
   if (json is String) {
     return Company.fromJson(jsonDecode(json));

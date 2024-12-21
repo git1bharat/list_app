@@ -12,12 +12,10 @@ class EditUserDialog extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Controllers for User fields
     final nameController = TextEditingController(text: user.name);
     final emailController = TextEditingController(text: user.email);
     final phoneController = TextEditingController(text: user.phone);
 
-    // Controllers for Address fields
     final streetController = TextEditingController(text: user.address.street);
     final suiteController = TextEditingController(text: user.address.suite);
     final cityController = TextEditingController(text: user.address.city);
@@ -29,7 +27,6 @@ class EditUserDialog extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            // User fields
             TextField(
               controller: nameController,
               decoration: const InputDecoration(labelText: 'Name'),
@@ -42,7 +39,6 @@ class EditUserDialog extends StatelessWidget {
               controller: phoneController,
               decoration: const InputDecoration(labelText: 'Phone'),
             ),
-            // Address fields
             TextField(
               controller: streetController,
               decoration: const InputDecoration(labelText: 'Street'),
@@ -69,7 +65,6 @@ class EditUserDialog extends StatelessWidget {
         ),
         ElevatedButton(
           onPressed: () {
-            // Create updated Address
             final updatedAddress = user.address.copyWith(
               street: streetController.text,
               suite: suiteController.text,
@@ -77,7 +72,6 @@ class EditUserDialog extends StatelessWidget {
               zipcode: zipcodeController.text,
             );
 
-            // Create updated User
             final updatedUser = user.copyWith(
               name: nameController.text,
               email: emailController.text,
@@ -85,13 +79,10 @@ class EditUserDialog extends StatelessWidget {
               address: updatedAddress,
             );
 
-            // Pass the updated user back to the parent
             onSave(updatedUser);
 
-            // Dispatch the update event
             context.read<UserBloc>().add(UserEvent.updateUser(updatedUser));
 
-            // Close the dialog
             Navigator.of(context).pop();
           },
           child: const Text('Save'),
