@@ -21,6 +21,7 @@ mixin _$UserEvent {
     required TResult Function() fetchUsers,
     required TResult Function(String query) filterUsers,
     required TResult Function() loadUsersFromDatabase,
+    required TResult Function(User user) updateUser,
     required TResult Function(int userId) deleteUser,
     required TResult Function() deleteAllUsers,
   }) =>
@@ -30,6 +31,7 @@ mixin _$UserEvent {
     TResult? Function()? fetchUsers,
     TResult? Function(String query)? filterUsers,
     TResult? Function()? loadUsersFromDatabase,
+    TResult? Function(User user)? updateUser,
     TResult? Function(int userId)? deleteUser,
     TResult? Function()? deleteAllUsers,
   }) =>
@@ -39,6 +41,7 @@ mixin _$UserEvent {
     TResult Function()? fetchUsers,
     TResult Function(String query)? filterUsers,
     TResult Function()? loadUsersFromDatabase,
+    TResult Function(User user)? updateUser,
     TResult Function(int userId)? deleteUser,
     TResult Function()? deleteAllUsers,
     required TResult orElse(),
@@ -50,6 +53,7 @@ mixin _$UserEvent {
     required TResult Function(FilterUsers value) filterUsers,
     required TResult Function(LoadUsersFromDatabase value)
         loadUsersFromDatabase,
+    required TResult Function(UpdateUser value) updateUser,
     required TResult Function(DeleteUser value) deleteUser,
     required TResult Function(DeleteAllUsers value) deleteAllUsers,
   }) =>
@@ -59,6 +63,7 @@ mixin _$UserEvent {
     TResult? Function(FetchUsers value)? fetchUsers,
     TResult? Function(FilterUsers value)? filterUsers,
     TResult? Function(LoadUsersFromDatabase value)? loadUsersFromDatabase,
+    TResult? Function(UpdateUser value)? updateUser,
     TResult? Function(DeleteUser value)? deleteUser,
     TResult? Function(DeleteAllUsers value)? deleteAllUsers,
   }) =>
@@ -68,6 +73,7 @@ mixin _$UserEvent {
     TResult Function(FetchUsers value)? fetchUsers,
     TResult Function(FilterUsers value)? filterUsers,
     TResult Function(LoadUsersFromDatabase value)? loadUsersFromDatabase,
+    TResult Function(UpdateUser value)? updateUser,
     TResult Function(DeleteUser value)? deleteUser,
     TResult Function(DeleteAllUsers value)? deleteAllUsers,
     required TResult orElse(),
@@ -133,6 +139,7 @@ class _$FetchUsersImpl implements FetchUsers {
     required TResult Function() fetchUsers,
     required TResult Function(String query) filterUsers,
     required TResult Function() loadUsersFromDatabase,
+    required TResult Function(User user) updateUser,
     required TResult Function(int userId) deleteUser,
     required TResult Function() deleteAllUsers,
   }) {
@@ -145,6 +152,7 @@ class _$FetchUsersImpl implements FetchUsers {
     TResult? Function()? fetchUsers,
     TResult? Function(String query)? filterUsers,
     TResult? Function()? loadUsersFromDatabase,
+    TResult? Function(User user)? updateUser,
     TResult? Function(int userId)? deleteUser,
     TResult? Function()? deleteAllUsers,
   }) {
@@ -157,6 +165,7 @@ class _$FetchUsersImpl implements FetchUsers {
     TResult Function()? fetchUsers,
     TResult Function(String query)? filterUsers,
     TResult Function()? loadUsersFromDatabase,
+    TResult Function(User user)? updateUser,
     TResult Function(int userId)? deleteUser,
     TResult Function()? deleteAllUsers,
     required TResult orElse(),
@@ -174,6 +183,7 @@ class _$FetchUsersImpl implements FetchUsers {
     required TResult Function(FilterUsers value) filterUsers,
     required TResult Function(LoadUsersFromDatabase value)
         loadUsersFromDatabase,
+    required TResult Function(UpdateUser value) updateUser,
     required TResult Function(DeleteUser value) deleteUser,
     required TResult Function(DeleteAllUsers value) deleteAllUsers,
   }) {
@@ -186,6 +196,7 @@ class _$FetchUsersImpl implements FetchUsers {
     TResult? Function(FetchUsers value)? fetchUsers,
     TResult? Function(FilterUsers value)? filterUsers,
     TResult? Function(LoadUsersFromDatabase value)? loadUsersFromDatabase,
+    TResult? Function(UpdateUser value)? updateUser,
     TResult? Function(DeleteUser value)? deleteUser,
     TResult? Function(DeleteAllUsers value)? deleteAllUsers,
   }) {
@@ -198,6 +209,7 @@ class _$FetchUsersImpl implements FetchUsers {
     TResult Function(FetchUsers value)? fetchUsers,
     TResult Function(FilterUsers value)? filterUsers,
     TResult Function(LoadUsersFromDatabase value)? loadUsersFromDatabase,
+    TResult Function(UpdateUser value)? updateUser,
     TResult Function(DeleteUser value)? deleteUser,
     TResult Function(DeleteAllUsers value)? deleteAllUsers,
     required TResult orElse(),
@@ -280,6 +292,7 @@ class _$FilterUsersImpl implements FilterUsers {
     required TResult Function() fetchUsers,
     required TResult Function(String query) filterUsers,
     required TResult Function() loadUsersFromDatabase,
+    required TResult Function(User user) updateUser,
     required TResult Function(int userId) deleteUser,
     required TResult Function() deleteAllUsers,
   }) {
@@ -292,6 +305,7 @@ class _$FilterUsersImpl implements FilterUsers {
     TResult? Function()? fetchUsers,
     TResult? Function(String query)? filterUsers,
     TResult? Function()? loadUsersFromDatabase,
+    TResult? Function(User user)? updateUser,
     TResult? Function(int userId)? deleteUser,
     TResult? Function()? deleteAllUsers,
   }) {
@@ -304,6 +318,7 @@ class _$FilterUsersImpl implements FilterUsers {
     TResult Function()? fetchUsers,
     TResult Function(String query)? filterUsers,
     TResult Function()? loadUsersFromDatabase,
+    TResult Function(User user)? updateUser,
     TResult Function(int userId)? deleteUser,
     TResult Function()? deleteAllUsers,
     required TResult orElse(),
@@ -321,6 +336,7 @@ class _$FilterUsersImpl implements FilterUsers {
     required TResult Function(FilterUsers value) filterUsers,
     required TResult Function(LoadUsersFromDatabase value)
         loadUsersFromDatabase,
+    required TResult Function(UpdateUser value) updateUser,
     required TResult Function(DeleteUser value) deleteUser,
     required TResult Function(DeleteAllUsers value) deleteAllUsers,
   }) {
@@ -333,6 +349,7 @@ class _$FilterUsersImpl implements FilterUsers {
     TResult? Function(FetchUsers value)? fetchUsers,
     TResult? Function(FilterUsers value)? filterUsers,
     TResult? Function(LoadUsersFromDatabase value)? loadUsersFromDatabase,
+    TResult? Function(UpdateUser value)? updateUser,
     TResult? Function(DeleteUser value)? deleteUser,
     TResult? Function(DeleteAllUsers value)? deleteAllUsers,
   }) {
@@ -345,6 +362,7 @@ class _$FilterUsersImpl implements FilterUsers {
     TResult Function(FetchUsers value)? fetchUsers,
     TResult Function(FilterUsers value)? filterUsers,
     TResult Function(LoadUsersFromDatabase value)? loadUsersFromDatabase,
+    TResult Function(UpdateUser value)? updateUser,
     TResult Function(DeleteUser value)? deleteUser,
     TResult Function(DeleteAllUsers value)? deleteAllUsers,
     required TResult orElse(),
@@ -408,6 +426,7 @@ class _$LoadUsersFromDatabaseImpl implements LoadUsersFromDatabase {
     required TResult Function() fetchUsers,
     required TResult Function(String query) filterUsers,
     required TResult Function() loadUsersFromDatabase,
+    required TResult Function(User user) updateUser,
     required TResult Function(int userId) deleteUser,
     required TResult Function() deleteAllUsers,
   }) {
@@ -420,6 +439,7 @@ class _$LoadUsersFromDatabaseImpl implements LoadUsersFromDatabase {
     TResult? Function()? fetchUsers,
     TResult? Function(String query)? filterUsers,
     TResult? Function()? loadUsersFromDatabase,
+    TResult? Function(User user)? updateUser,
     TResult? Function(int userId)? deleteUser,
     TResult? Function()? deleteAllUsers,
   }) {
@@ -432,6 +452,7 @@ class _$LoadUsersFromDatabaseImpl implements LoadUsersFromDatabase {
     TResult Function()? fetchUsers,
     TResult Function(String query)? filterUsers,
     TResult Function()? loadUsersFromDatabase,
+    TResult Function(User user)? updateUser,
     TResult Function(int userId)? deleteUser,
     TResult Function()? deleteAllUsers,
     required TResult orElse(),
@@ -449,6 +470,7 @@ class _$LoadUsersFromDatabaseImpl implements LoadUsersFromDatabase {
     required TResult Function(FilterUsers value) filterUsers,
     required TResult Function(LoadUsersFromDatabase value)
         loadUsersFromDatabase,
+    required TResult Function(UpdateUser value) updateUser,
     required TResult Function(DeleteUser value) deleteUser,
     required TResult Function(DeleteAllUsers value) deleteAllUsers,
   }) {
@@ -461,6 +483,7 @@ class _$LoadUsersFromDatabaseImpl implements LoadUsersFromDatabase {
     TResult? Function(FetchUsers value)? fetchUsers,
     TResult? Function(FilterUsers value)? filterUsers,
     TResult? Function(LoadUsersFromDatabase value)? loadUsersFromDatabase,
+    TResult? Function(UpdateUser value)? updateUser,
     TResult? Function(DeleteUser value)? deleteUser,
     TResult? Function(DeleteAllUsers value)? deleteAllUsers,
   }) {
@@ -473,6 +496,7 @@ class _$LoadUsersFromDatabaseImpl implements LoadUsersFromDatabase {
     TResult Function(FetchUsers value)? fetchUsers,
     TResult Function(FilterUsers value)? filterUsers,
     TResult Function(LoadUsersFromDatabase value)? loadUsersFromDatabase,
+    TResult Function(UpdateUser value)? updateUser,
     TResult Function(DeleteUser value)? deleteUser,
     TResult Function(DeleteAllUsers value)? deleteAllUsers,
     required TResult orElse(),
@@ -486,6 +510,174 @@ class _$LoadUsersFromDatabaseImpl implements LoadUsersFromDatabase {
 
 abstract class LoadUsersFromDatabase implements UserEvent {
   const factory LoadUsersFromDatabase() = _$LoadUsersFromDatabaseImpl;
+}
+
+/// @nodoc
+abstract class _$$UpdateUserImplCopyWith<$Res> {
+  factory _$$UpdateUserImplCopyWith(
+          _$UpdateUserImpl value, $Res Function(_$UpdateUserImpl) then) =
+      __$$UpdateUserImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({User user});
+
+  $UserCopyWith<$Res> get user;
+}
+
+/// @nodoc
+class __$$UpdateUserImplCopyWithImpl<$Res>
+    extends _$UserEventCopyWithImpl<$Res, _$UpdateUserImpl>
+    implements _$$UpdateUserImplCopyWith<$Res> {
+  __$$UpdateUserImplCopyWithImpl(
+      _$UpdateUserImpl _value, $Res Function(_$UpdateUserImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? user = null,
+  }) {
+    return _then(_$UpdateUserImpl(
+      null == user
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as User,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $UserCopyWith<$Res> get user {
+    return $UserCopyWith<$Res>(_value.user, (value) {
+      return _then(_value.copyWith(user: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$UpdateUserImpl implements UpdateUser {
+  const _$UpdateUserImpl(this.user);
+
+  @override
+  final User user;
+
+  @override
+  String toString() {
+    return 'UserEvent.updateUser(user: $user)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateUserImpl &&
+            (identical(other.user, user) || other.user == user));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, user);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UpdateUserImplCopyWith<_$UpdateUserImpl> get copyWith =>
+      __$$UpdateUserImplCopyWithImpl<_$UpdateUserImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() fetchUsers,
+    required TResult Function(String query) filterUsers,
+    required TResult Function() loadUsersFromDatabase,
+    required TResult Function(User user) updateUser,
+    required TResult Function(int userId) deleteUser,
+    required TResult Function() deleteAllUsers,
+  }) {
+    return updateUser(user);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? fetchUsers,
+    TResult? Function(String query)? filterUsers,
+    TResult? Function()? loadUsersFromDatabase,
+    TResult? Function(User user)? updateUser,
+    TResult? Function(int userId)? deleteUser,
+    TResult? Function()? deleteAllUsers,
+  }) {
+    return updateUser?.call(user);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? fetchUsers,
+    TResult Function(String query)? filterUsers,
+    TResult Function()? loadUsersFromDatabase,
+    TResult Function(User user)? updateUser,
+    TResult Function(int userId)? deleteUser,
+    TResult Function()? deleteAllUsers,
+    required TResult orElse(),
+  }) {
+    if (updateUser != null) {
+      return updateUser(user);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(FetchUsers value) fetchUsers,
+    required TResult Function(FilterUsers value) filterUsers,
+    required TResult Function(LoadUsersFromDatabase value)
+        loadUsersFromDatabase,
+    required TResult Function(UpdateUser value) updateUser,
+    required TResult Function(DeleteUser value) deleteUser,
+    required TResult Function(DeleteAllUsers value) deleteAllUsers,
+  }) {
+    return updateUser(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(FetchUsers value)? fetchUsers,
+    TResult? Function(FilterUsers value)? filterUsers,
+    TResult? Function(LoadUsersFromDatabase value)? loadUsersFromDatabase,
+    TResult? Function(UpdateUser value)? updateUser,
+    TResult? Function(DeleteUser value)? deleteUser,
+    TResult? Function(DeleteAllUsers value)? deleteAllUsers,
+  }) {
+    return updateUser?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(FetchUsers value)? fetchUsers,
+    TResult Function(FilterUsers value)? filterUsers,
+    TResult Function(LoadUsersFromDatabase value)? loadUsersFromDatabase,
+    TResult Function(UpdateUser value)? updateUser,
+    TResult Function(DeleteUser value)? deleteUser,
+    TResult Function(DeleteAllUsers value)? deleteAllUsers,
+    required TResult orElse(),
+  }) {
+    if (updateUser != null) {
+      return updateUser(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UpdateUser implements UserEvent {
+  const factory UpdateUser(final User user) = _$UpdateUserImpl;
+
+  User get user;
+  @JsonKey(ignore: true)
+  _$$UpdateUserImplCopyWith<_$UpdateUserImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -555,6 +747,7 @@ class _$DeleteUserImpl implements DeleteUser {
     required TResult Function() fetchUsers,
     required TResult Function(String query) filterUsers,
     required TResult Function() loadUsersFromDatabase,
+    required TResult Function(User user) updateUser,
     required TResult Function(int userId) deleteUser,
     required TResult Function() deleteAllUsers,
   }) {
@@ -567,6 +760,7 @@ class _$DeleteUserImpl implements DeleteUser {
     TResult? Function()? fetchUsers,
     TResult? Function(String query)? filterUsers,
     TResult? Function()? loadUsersFromDatabase,
+    TResult? Function(User user)? updateUser,
     TResult? Function(int userId)? deleteUser,
     TResult? Function()? deleteAllUsers,
   }) {
@@ -579,6 +773,7 @@ class _$DeleteUserImpl implements DeleteUser {
     TResult Function()? fetchUsers,
     TResult Function(String query)? filterUsers,
     TResult Function()? loadUsersFromDatabase,
+    TResult Function(User user)? updateUser,
     TResult Function(int userId)? deleteUser,
     TResult Function()? deleteAllUsers,
     required TResult orElse(),
@@ -596,6 +791,7 @@ class _$DeleteUserImpl implements DeleteUser {
     required TResult Function(FilterUsers value) filterUsers,
     required TResult Function(LoadUsersFromDatabase value)
         loadUsersFromDatabase,
+    required TResult Function(UpdateUser value) updateUser,
     required TResult Function(DeleteUser value) deleteUser,
     required TResult Function(DeleteAllUsers value) deleteAllUsers,
   }) {
@@ -608,6 +804,7 @@ class _$DeleteUserImpl implements DeleteUser {
     TResult? Function(FetchUsers value)? fetchUsers,
     TResult? Function(FilterUsers value)? filterUsers,
     TResult? Function(LoadUsersFromDatabase value)? loadUsersFromDatabase,
+    TResult? Function(UpdateUser value)? updateUser,
     TResult? Function(DeleteUser value)? deleteUser,
     TResult? Function(DeleteAllUsers value)? deleteAllUsers,
   }) {
@@ -620,6 +817,7 @@ class _$DeleteUserImpl implements DeleteUser {
     TResult Function(FetchUsers value)? fetchUsers,
     TResult Function(FilterUsers value)? filterUsers,
     TResult Function(LoadUsersFromDatabase value)? loadUsersFromDatabase,
+    TResult Function(UpdateUser value)? updateUser,
     TResult Function(DeleteUser value)? deleteUser,
     TResult Function(DeleteAllUsers value)? deleteAllUsers,
     required TResult orElse(),
@@ -681,6 +879,7 @@ class _$DeleteAllUsersImpl implements DeleteAllUsers {
     required TResult Function() fetchUsers,
     required TResult Function(String query) filterUsers,
     required TResult Function() loadUsersFromDatabase,
+    required TResult Function(User user) updateUser,
     required TResult Function(int userId) deleteUser,
     required TResult Function() deleteAllUsers,
   }) {
@@ -693,6 +892,7 @@ class _$DeleteAllUsersImpl implements DeleteAllUsers {
     TResult? Function()? fetchUsers,
     TResult? Function(String query)? filterUsers,
     TResult? Function()? loadUsersFromDatabase,
+    TResult? Function(User user)? updateUser,
     TResult? Function(int userId)? deleteUser,
     TResult? Function()? deleteAllUsers,
   }) {
@@ -705,6 +905,7 @@ class _$DeleteAllUsersImpl implements DeleteAllUsers {
     TResult Function()? fetchUsers,
     TResult Function(String query)? filterUsers,
     TResult Function()? loadUsersFromDatabase,
+    TResult Function(User user)? updateUser,
     TResult Function(int userId)? deleteUser,
     TResult Function()? deleteAllUsers,
     required TResult orElse(),
@@ -722,6 +923,7 @@ class _$DeleteAllUsersImpl implements DeleteAllUsers {
     required TResult Function(FilterUsers value) filterUsers,
     required TResult Function(LoadUsersFromDatabase value)
         loadUsersFromDatabase,
+    required TResult Function(UpdateUser value) updateUser,
     required TResult Function(DeleteUser value) deleteUser,
     required TResult Function(DeleteAllUsers value) deleteAllUsers,
   }) {
@@ -734,6 +936,7 @@ class _$DeleteAllUsersImpl implements DeleteAllUsers {
     TResult? Function(FetchUsers value)? fetchUsers,
     TResult? Function(FilterUsers value)? filterUsers,
     TResult? Function(LoadUsersFromDatabase value)? loadUsersFromDatabase,
+    TResult? Function(UpdateUser value)? updateUser,
     TResult? Function(DeleteUser value)? deleteUser,
     TResult? Function(DeleteAllUsers value)? deleteAllUsers,
   }) {
@@ -746,6 +949,7 @@ class _$DeleteAllUsersImpl implements DeleteAllUsers {
     TResult Function(FetchUsers value)? fetchUsers,
     TResult Function(FilterUsers value)? filterUsers,
     TResult Function(LoadUsersFromDatabase value)? loadUsersFromDatabase,
+    TResult Function(UpdateUser value)? updateUser,
     TResult Function(DeleteUser value)? deleteUser,
     TResult Function(DeleteAllUsers value)? deleteAllUsers,
     required TResult orElse(),

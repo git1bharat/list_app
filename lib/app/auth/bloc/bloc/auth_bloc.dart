@@ -57,5 +57,9 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         emit(AuthState.error(e.toString()));
       }
     });
+
+    
+    
   }
+    
 }
